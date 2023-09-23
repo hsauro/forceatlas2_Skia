@@ -1,0 +1,117 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'Graph Application'
+  ClientHeight = 588
+  ClientWidth = 1008
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object Layout1: TLayout
+    Align = Top
+    Size.Width = 1008.000000000000000000
+    Size.Height = 97.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnRandomnetwork: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Random Network'
+      OnClick = btnRandomnetworkClick
+    end
+    object Label1: TLabel
+      Position.X = 144.000000000000000000
+      Position.Y = 18.000000000000000000
+      Text = 'Number of nodes:'
+      TabOrder = 2
+    end
+    object Label2: TLabel
+      Position.X = 144.000000000000000000
+      Position.Y = 43.000000000000000000
+      Text = 'Number of edges:'
+      TabOrder = 1
+    end
+    object nbNumNodes: TNumberBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 4
+      Cursor = crIBeam
+      Value = 20.000000000000000000
+      Position.X = 256.000000000000000000
+      Position.Y = 18.000000000000000000
+    end
+    object nbNumEdges: TNumberBox
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Cursor = crIBeam
+      Value = 25.000000000000000000
+      Position.X = 256.000000000000000000
+      Position.Y = 43.000000000000000000
+    end
+    object btnClear: TButton
+      Position.X = 528.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Clear Graph'
+      OnClick = btnClearClick
+    end
+    object btnSelect: TButton
+      Position.X = 376.000000000000000000
+      Position.Y = 18.000000000000000000
+      TabOrder = 6
+      Text = 'Select'
+      OnClick = btnSelectClick
+    end
+    object btnCenterGraph: TButton
+      Position.X = 528.000000000000000000
+      Position.Y = 18.000000000000000000
+      Size.Width = 89.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Center Graph'
+      OnClick = btnCenterGraphClick
+    end
+    object btnLayout: TButton
+      Position.X = 16.000000000000000000
+      Position.Y = 46.000000000000000000
+      Size.Width = 113.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Do Layout'
+      OnClick = btnLayoutClick
+    end
+  end
+  object Layout3D1: TLayout3D
+    Height = 4.000000000000000000
+    Width = 5.000000000000000000
+  end
+  object SkPaintBox: TSkPaintBox
+    Align = Client
+    HitTest = True
+    Size.Width = 1008.000000000000000000
+    Size.Height = 491.000000000000000000
+    Size.PlatformDefault = False
+    OnMouseDown = SkPaintBoxMouseDown
+    OnMouseMove = SkPaintBoxMouseMove
+    OnMouseUp = SkPaintBoxMouseUp
+    OnDraw = SkPaintBoxDraw
+  end
+  object Timer1: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = Timer1Timer
+    Left = 376
+    Top = 272
+  end
+end
